@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  mongodb:
+    image: 'mongo'
+    volumes:
+      - data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    ports:
+      - '27018:27017'
+    restart: always
+
+  server:
+    image: ahmartariq/ecommerce
+    ports:
+      - "8000:5000"
+    restart: always
+    depends_on:
+      - mongodb
+
+volumes:
+  data:

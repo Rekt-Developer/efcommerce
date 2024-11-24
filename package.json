@@ -1,0 +1,38 @@
+{
+  "name": "e-store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "cd client && npm run start",
+    "server-install": "npm install",
+    "client-install": "cd client && npm install",
+    "install-all": "concurrently \"npm run server-install \" \"npm run client-install \"",
+    "dev": "concurrently \"npm run server \" \"npm run client \"",
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "test": "mocha --reporter spec ./tests/ --exit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cloudinary": "^1.27.1",
+    "concurrently": "^6.5.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "express-fileupload": "^1.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "mocha": "^10.2.0",
+    "mongoose": "^6.1.2",
+    "react-paypal-express-checkout": "^1.0.5",
+    "selenium-webdriver": "^4.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
